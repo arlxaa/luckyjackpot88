@@ -19,7 +19,7 @@ export function Header({ onOpenSettings }: { onOpenSettings: () => void }) {
           className="flex items-center gap-2 -rotate-2 hover:rotate-0 transition"
         >
           <PixelArt name="tent" size={32} label="Lucky Jackpot88 tent" shadow={false} />
-          <span className="font-pixel text-sm text-ink">LUCKY JACKPOT88</span>
+          <span className="font-pixel text-xs sm:text-sm text-ink">LUCKY JACKPOT88</span>
         </Link>
         <div className="flex items-center gap-2">
           <CoinCounter />

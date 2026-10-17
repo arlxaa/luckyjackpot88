@@ -133,6 +133,20 @@ export function RouletteGame() {
 
   const totalStake: number = (Object.values(bets) as Array<number | undefined>).reduce<number>((a, b) => a + (b ?? 0), 0);
 
+  // Keep placed chips in sync with the selected chip size, so the
+  // displayed chip always equals the actual stake (no stale 5s under a 50).
+  useEffect(() => {
+    setBets((prev) => {
+      const ids = Object.keys(prev) as BetId[];
+      if (ids.length === 0) return prev;
+      const next: Bets = {};
+      ids.forEach((id) => {
+        next[id] = bet;
+      });
+      return next;
+    });
+  }, [bet]);
+
   const toggleBet = (id: BetId) => {
     if (spinning) return;
     playSound('click');
@@ -239,7 +253,7 @@ export function RouletteGame() {
                       : colorOf(n) === 'black' ? 'bg-[#2b2b33] text-white hover:brightness-125'
                       : 'bg-[#0e9f6e] text-white hover:brightness-110'
                     }`}
-                  >{n}</button>
+                  >{n}{active ? `·${bets[id]}` : ''}</button>
                 );
               })}
             </div>
@@ -257,7 +271,7 @@ export function RouletteGame() {
                       : active ? 'bg-amber-300 text-red-900 border-ink'
                       : 'bg-parchment text-ink border-ink/40 hover:border-ink'
                     }`}
-                  >{o.label}</button>
+                  >{o.label}{active ? ` ·${bets[o.id]}` : ''}</button>
                 );
               })}
             </div>
