@@ -1,0 +1,15 @@
+{
+  "app": { "tagline": "Virtual coins only. Just for fun.", "footer": "Just for fun. Virtual coins only. No real money." },
+  "header": { "balance": "Coins", "login": "Sign in with Google", "logout": "Sign out", "mute": "Mute", "unmute": "Unmute" },
+  "lobby": {
+    "title": "Lucky Jackpot88",
+    "subtitle": "Pick a machine. Virtual coins only.",
+    "lastBigWin": "Last big win",
+    "play": "Play",
+    "comingSoon": "Coming in next milestone"
+  },
+  "bet": { "label": "Bet" },
+  "freeCoins": { "title": "Out of coins?", "cta": "Play Coin Catch", "desc": "Catch falling coins for 30 seconds to win free coins." },
+  "leaderboard": { "title": "Leaderboard", "byBalance": "Top balance", "byWin": "Biggest win", "guestNote": "Sign in to appear on the leaderboard. Guests can play freely." },
+  "settings": { "title": "Settings", "volume": "Volume", "music": "Music", "reduceMotion": "Reduce motion", "quality": "Graphics quality" }
+}
